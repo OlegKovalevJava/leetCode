@@ -1,13 +1,15 @@
 package org.example.test;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Main {
     public static void main(String[] args) {
-        Triangle triangle = new Triangle();
-        triangle.a = 1;
-        triangle.b = 2;
-        triangle.c = 3;
 
-        System.out.println(triangle);
+        Pattern pattern = Pattern.compile("\\s[a-zA-Z]{5}\\s");
+        Matcher matcher = pattern.matcher("In JavaRush, Diego the best, Diego is Java God");
+        String value = matcher.replaceAll(" Amigo ");
+        System.out.println(value);
 
     }
 }
